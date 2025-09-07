@@ -975,6 +975,7 @@ public function formatOrderDate($date) {
         }
         return null;
     }
+    
 
     // =================================================================
     // CART MANAGEMENT METHODS (Session-based)

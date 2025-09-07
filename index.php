@@ -339,18 +339,21 @@ footer {text-align:center; padding:20px 0; border-top:1px solid #000; margin-top
 
 /* Chat Button */
 #chatBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #000;
-  color: #fff;
-  border-radius: 50%;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 22px;
-  z-index: 9999;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  transition: 0.3s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
 }
 #chatBtn:hover {
   background: #333;
@@ -358,36 +361,38 @@ footer {text-align:center; padding:20px 0; border-top:1px solid #000; margin-top
 
 /* Chatbox */
 #chatBox.hidden { display: none; }
+
 #chatBox {
   position: fixed;
   bottom: 80px;
   right: 20px;
   width: 320px;
-  max-height: 420px;
+  max-height: 450px;
   background: #fff;
-  border: 2px solid #000;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   z-index: 10000;
+  font-family: 'Segoe UI', sans-serif;
   transition: all 0.3s ease-in-out;
 }
 #chatBox.expanded {
   width: 380px;
-  max-height: 540px;
+  max-height: 550px;
 }
 
 /* Header */
 .chat-header {
-  background: #000;
+  background: #111;
   color: #fff;
-  padding: 10px;
+  padding: 12px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 15px;
 }
 .chat-actions button {
   background: transparent;
@@ -399,57 +404,67 @@ footer {text-align:center; padding:20px 0; border-top:1px solid #000; margin-top
   transition: 0.2s;
 }
 .chat-actions button:hover {
-  color: #bbb;
+  color: #f0f0f0;
 }
 
 /* Body */
 .chat-body {
   flex: 1;
-  padding: 10px;
+  padding: 12px 16px;
   overflow-y: auto;
   font-size: 14px;
-  background: #fff;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
+
+/* Messages */
 .bot-message {
   background: #f0f0f0;
-  padding: 8px 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #000;
-  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  max-width: 75%;
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 1.4;
 }
+
 .user-message {
-  text-align: right;
-  margin: 6px 0;
-  background: #000;
+  background: #111;
   color: #fff;
-  padding: 8px 10px;
-  border-radius: 8px;
-  max-width: 80%;
-  margin-left: auto;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  align-self: flex-end;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* Suggestions */
 .suggestions, .chat-suggestions {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 10px;
 }
 .suggestion {
-  border: 1px solid #000;
+  border: 1px solid #111;
   background: #fff;
-  padding: 6px 8px;
-  border-radius: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
   cursor: pointer;
-  text-align: left;
-  transition: 0.2s;
+  text-align: center;
+  transition: all 0.2s;
   font-size: 13px;
 }
 .suggestion:hover {
-  background: #000;
+  background: #111;
   color: #fff;
+  transform: scale(1.05);
 }
+
 
 /* Footer */
 .chat-footer {
@@ -500,39 +515,53 @@ footer {text-align:center; padding:20px 0; border-top:1px solid #000; margin-top
 footer {
     background: #e9e9e9;
     border-top: 1px solid #eee;
-    padding: 40px 20px;
+    padding: 60px 20px; /* increased from 40px to 60px for more height */
     text-align: center;
     font-size: 14px;
     color: #555;
     margin-top: 60px;
 }
+
 .footer-columns {
     display: flex;
     justify-content: center;
-    gap: 100px;
-    margin-bottom: 20px;
+    gap: 120px; /* slightly more spacing between columns */
+    margin-bottom: 30px; /* more space before social icons */
 }
+
 .footer-columns h4 {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* slightly more space under headers */
     font-weight: bold;
     color: #000;
 }
+
 .footer-columns a {
     display: block;
     text-decoration: none;
     color: #555;
-    margin: 5px 0;
+    margin: 6px 0; /* slightly taller spacing between links */
 }
-.footer-columns a:hover { color: #000; }
-.social-icons { margin-top: 15px; }
+
+.footer-columns a:hover {
+    color: #000;
+}
+
+.social-icons {
+    margin-top: 25px; /* give more breathing space from columns */
+}
+
 .social-icons a {
-    margin: 0 8px;
+    margin: 0 10px; /* more spacing between icons */
     color: #555;
     text-decoration: none;
     font-size: 18px;
 }
-.social-icons a:hover { color: #000; }
+
+.social-icons a:hover {
+    color: #000;
+}
+
 
 </style>
 
@@ -597,8 +626,7 @@ footer {
     <a href="index.php">HOME</a>
     <a href="index.php?gender=Male">For Him</a>
     <a href="index.php?gender=Female">For Her</a>
-    <a href="#contact">CONTACT</a>
-    <a href="reviews.php">REVIEWS</a>
+    <a href="contact.php">CONTACT</a>
 </div>
 
 <!-- Font Awesome (CDN) -->
@@ -644,7 +672,10 @@ footer {
 </div>
 
 <!-- Chat Button -->
-<div id="chatBtn">💬</div>
+<div id="chatBtn">
+  <i class="fas fa-comment-dots"></i>
+</div>
+
 
 <!-- Chatbox -->
 <div id="chatBox" class="hidden">

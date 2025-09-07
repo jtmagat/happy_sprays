@@ -119,24 +119,6 @@ h2 { text-align:center; margin-bottom:30px; color:#333; }
 <div class="top-nav">
   <div class="logo">Happy Sprays</div>
   <div class="nav-actions">
-    <button class="icon-btn" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-    </button>
-    <a href="cart.php" class="cart-link">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M6 7h12l1 12H5L6 7z"/>
-        <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
-      </svg>
-    </a>
-    <a href="customer_dashboard.php" class="profile-link" title="My Account">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
-      </svg>
-    </a>
   </div>
 </div>
 
@@ -177,5 +159,7 @@ h2 { text-align:center; margin-bottom:30px; color:#333; }
   <?php endif; ?>
 </div>
 
+
+    
 </body>
 </html>
